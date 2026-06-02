@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>what do you prefer?</title>
+     <div>
+      <a href="index.html"class="Homie-btn">Home</a>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --transition-duration: 800ms;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #dc2626; 
+            color: white;
+            transition: background-color var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 2.5rem 3rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+            max-width: 460px;
+            width: 100%;
+        }
+        .Homie-btn{
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 600;
+    transition:all 0.3s linear;
+}
+.Homie-btn:hover{
+    color: #ffffff;
+    transform: scale(1.09);
+}
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .mood-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s ease;
+        }
+
+        .switch-btn {
+            background: rgba(255, 255, 255, 0.95);
+            color: #2e1f37;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .switch-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .switch-btn:active {
+            transform: scale(0.98);
+        }
+
+        .status {
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.75;
+            font-weight: 500;
+        }
+
+        .counter {
+            display: none;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        #secretLinkContainer {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .secret-link {
+            display: inline-block;
+            background: #ffffff;
+            color: #dc2626;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .secret-link:hover {
+            transform: scale(1.05);
+            background: #f3f4f6;
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <h1>Our prices</h1>
+        <p>the more you pay the more we give <br> (send your desired plan via contact)</p>
+        
+        <img id="moodImage" class="mood-image" src="image2/pic1.jpg" alt="Current Mood">
+        
+        <br>
+        <button class="switch-btn" id="switchBtn">
+            <span id="btnText">Switch payment plan</span>
+        </button>
+        
+        <div class="status" id="status">
+            Current: <strong>starter</strong>
+        </div>
+
+        <div class="counter" id="counter">Clicks: 0 / 67</div>
+
+        <div id="secretLinkContainer">
+            <p style="margin-bottom: 10px; font-weight: 600;">click here </p>
+            <a href="scret.html" target="_blank" id="secretLink" class="secret-link">discount code</a>
+        </div>
+    </div>
+
+    <script>
+        const body = document.body;
+        const switchBtn = document.getElementById('switchBtn');
+        const btnText = document.getElementById('btnText');
+        const status = document.getElementById('status');
+        const moodImage = document.getElementById('moodImage');
+        const counterEl = document.getElementById('counter');
+        const secretLinkContainer = document.getElementById('secretLinkContainer');
+        const secretLink = document.getElementById('secretLink');
+
+        const colors = ['#dc2626', '#2563eb', '#16a34a', '#7c3aed', '#db2777', '#ea580c'];
+        
+        const images = [
+            "image2/pic1.jpg",
+            "image2/pic2.jpg",
+            "image2/pic3.jpg",
+            "image2/pic4.jpg",
+            "image2/pic5.jpg",
+            "image2/pic6.jpg",
+        ];
+        const colorNames = ['starter', 'free trial', 'starter plus', 'starter plus premium', 'premium service', 'vip premium'];
+
+        let clickCount = 0;
+        let currentIndex = 0;
+
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 40; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = `${Math.random() * 6 + 2}px`;
+                particle.style.height = particle.style.width;
+                particle.style.background = 'rgba(255, 255, 255, 0.15)';
+                particle.style.borderRadius = '50%';
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.opacity = Math.random() * 0.6 + 0.2;
+                particle.style.animation = `float ${Math.random() * 15 + 10}s linear infinite`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0) rotate(0deg); }
+                100% { transform: translateY(-1200px) rotate(720deg); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        function toggleBackground() {
+            if (clickCount >= 67) return; 
+
+            clickCount++;
+            counterEl.textContent = `Clicks: ${clickCount} / 67`;
+
+            currentIndex = (currentIndex + 1) % colors.length;
+            
+            body.style.backgroundColor = colors[currentIndex];
+            moodImage.src = images[currentIndex];
+            
+            const nextIndex = (currentIndex + 1) % colors.length;
+            btnText.textContent = `Switch to ${colorNames[nextIndex]}`;
+            status.innerHTML = `Current: <strong>${colorNames[currentIndex]}</strong>`;
+
+            if (clickCount === 67) {
+                switchBtn.disabled = true;
+                switchBtn.style.opacity = "0.4";
+                switchBtn.style.cursor = "not-allowed";
+                btnText.textContent = "Unlocked!";
+                
+                secretLink.style.color = colors[currentIndex];
+                secretLinkContainer.style.display = "block";
+            }
+        }
+
+        switchBtn.addEventListener('click', toggleBackground);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                toggleBackground();
+            }
+        });
+
+        window.onload = () => {
+            createParticles();
+            btnText.textContent = `Switch to ${colorNames[1]}`;
+        };
+
+        
+    </script>
+</body>
+</html>

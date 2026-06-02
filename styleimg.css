@@ -1,0 +1,135 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("image/bgimage7.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 10px 10%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 18%;
+    background-image: linear-gradient(30deg, #ae83ff, #8a008f);
+     -webkit-text-stroke: 0.3px #353333;
+    color: transparent;
+    background-clip: text;
+}
+
+.Homie-btn{
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    text-decoration: none;
+    color: #fffbfb;
+    font-weight: 600;
+    transition:all 0.3s linear;
+}
+.Homie-btn:hover{
+    color: #e239f8;
+    transform: scale(1.09);
+}
+
+.gallery {
+    width: 100%;
+}
+
+.gallery-container {
+    align-items: center;
+    display: flex;
+    height: 490px;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: center;
+}
+
+.gallery-item {
+    height: 350px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 300px;
+    z-index: 0;
+    border-radius: 15px;
+    object-fit: cover; 
+}
+
+
+.gallery-item-1 {
+    left: 15%;
+    opacity: 0.4;
+    transform: translateX(-50%);
+}
+
+.gallery-item-2 {
+    left: 30%;
+    transform: translateX(-50%);
+    height: 400px;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.gallery-item-3 {
+    box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.4);
+    height: 450px;
+    opacity: 1;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gallery-item-4 {
+    left: 70%;
+    transform: translateX(-50%);
+    height: 400px;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.gallery-item-5 {
+    left: 85%;
+    opacity: 0.4;
+    transform: translateX(-50%);
+}
+
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    margin-right: 20%;
+    height: 50px;
+}
+
+.gallery-controls button {
+    background-image:linear-gradient(30deg, #59006b, #b60dd8);
+    color: #ffffff;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 20px;
+    padding: 10px 25px;
+    text-transform: capitalize;
+    transition: all 0.2s ease;
+filter: drop-shadow(5px 5px 6px #665363)
+}
+
+.gallery-controls button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.gallery-controls button:focus {
+    outline: none;
+}

@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.Hero{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("image/bgimage6.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+
+}
+nav{
+    padding:10px 0;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    
+}
+.logo{
+    width: 250px;
+    position: fixed;
+    top: 10px;
+    right: 85%;
+     filter: drop-shadow(5px 5px 10px #3d373c)
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+    position: relative;
+    left: 45%;
+    
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    transition:all 0.3s linear;
+    font-family: 'cursive', sans-serif;
+    
+}
+nav ul li a:hover{
+    color: #ff435c;
+     transform: scale(1.09);
+}
+.contact-btn{
+    text-decoration: none;
+    color: #ff8dcd;
+    margin-right: 30px;
+    font-weight: 650;
+    transition:all 0.3s linear;
+    
+}
+.contact-btn:hover{
+    color: #a33853;
+     transform: scale(1.09);
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #d067e6, #760785);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0%;
+    transition: 0.4s;
+    filter: drop-shadow(5px 5px 10px #3d373c)
+    
+}
+
+.content{
+    margin-top: 3%;
+    max-width: 600px;
+
+}
+.content h1{
+    font-size: 60px;
+    color: #d477ff;
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    font-family:'Trebuchet MS';
+    
+}
+
+.content p{
+    font-size: 20px;
+    font-weight: 300;
+    color:#c876ff;
+    position: absolute;
+    max-width: 550px;
+    top: 52%;
+    left: 10px;
+    animation-delay: 0.5s;
+    
+}
+.content .btn{
+    padding: 15px 80px;
+    font-size: 16px;
+    position: absolute;
+    top: 70%;
+    left: 10px;
+    animation-delay: 1.7s;
+}
+.btn:hover{
+    border-top-right-radius: 30px;
+
+
+
+}
+.feature-img{
+    width: 420px;
+    height: 550px;
+    position: absolute;
+    bottom: 2.5%;
+    right: 7.5%;
+    border-radius: 1rem;
+    filter: drop-shadow(10px 10px 10px #3d373c)
+    
+
+}
+.feature-img.anima{
+animation-delay: 1.25s;
+}
+.anima{ 
+      opacity: 0;
+      transform: translateY(30px);
+      animation: moveup 0.5s linear forwards;
+
+}
+.audio{
+    position: absolute;
+    bottom: 5%;
+    right: 60%;
+}
+@keyframes moveup {
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

@@ -1,0 +1,131 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+   overflow-x: hidden;
+   overflow-y: hidden;
+}
+
+.contact-section{
+   background-image: url(image/bgimages.jpg);
+   padding: 260px 0;
+   display: flex;
+   background-size: cover;
+   background-position: center;
+   text-align: center;
+}
+
+.inner-width{
+   max-width: 600px;
+   margin: auto;
+   padding: 0 20px
+}
+
+.contact-section h1{
+   font-size: 30px;
+   background-image: linear-gradient(360deg, #e4a6e4, #af1fb4);
+   color: transparent;
+   background-clip: text;
+   margin-bottom: 40px;
+   -webkit-text-stroke: 0.5px #5e5454;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+   font-weight: 700; 
+}
+
+.name,.email,.message{
+   background: none;
+   border: none;
+   outline: none;
+   border-bottom: 1px solid;
+   color: #c20078;
+   padding: 10px 6px;
+   font-size: 14px;
+   margin-bottom: 40px;
+}
+.message:hover{
+   background: rgb(0, 0, 0);
+
+} 
+
+.email:hover{
+   background: rgb(0, 0, 0);
+
+}
+
+.name:hover{
+   background: rgb(0, 0, 0);
+
+} 
+
+.name{
+   float: left;
+   width: 270px;
+}
+
+.email{
+   float: right;
+   width: 270px;
+}
+
+.message{
+   min-width: 100%;
+   max-width: 100%;
+}
+
+.contact-section button{
+   background:none;
+   color:#ffffff;
+   border: 1px solid #8400ff;
+   padding: 12px 40px;
+   border-radius: 8px;
+   text-transform: uppercase;
+   font-size: 14px;
+   transition: 0.4s linear;
+   cursor: pointer;
+}
+
+.contact-section button:hover{
+   color: rgb(255, 255, 255);
+   
+}
+.contact-section button:hover{
+    background: #8400ff;
+    transform: scale(1.06);
+}
+
+@media screen and (max-width:600px) {
+   .name,.email{
+      width: 100%;
+   }
+   
+}
+
+.Homie-btn{
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    transition:all 0.3s linear;
+}
+.Homie-btn:hover{
+    color: #e239f8;
+    transform: scale(1.09);
+}
+
+.cool-img{
+    width: 280px;
+    height: 560px;
+    position: fixed;
+    bottom: 8%;
+    right: 2%;
+    border-radius: 1rem;
+    filter: drop-shadow(10px 10px 10px #3d373c)
+    
+}
+.hidden{
+    display: none;
+}
